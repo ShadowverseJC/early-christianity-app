@@ -1,6 +1,6 @@
 # Early Christianity
 
-An educational app exploring Early Christianity — The Gospels, the Historical Jesus, and Paul the Apostle — with a manuscript-inspired aesthetic.
+An educational app relaying the unbiased, scholarly study of Early Christianity — The Gospels, the Historical Jesus, and Paul the Apostle — with a manuscript-inspired aesthetic.
 
 ## Getting started
 
