@@ -747,7 +747,7 @@ const MARK_TILES = [
   { id: "temple-prediction", title: "Did Jesus Predict the Temple's Destruction?", teaser: "Prophecy after the fact — or genuine foresight?", bgClass: "tile-mark", screen: "temple-prediction" },
   { id: "passion-mark", title: "The Passion Narrative", teaser: "The oldest account of Jesus's arrest, trial, and death.", bgClass: "tile-matthew" },
   { id: "irony-mark", title: "Thematic Irony in Mark", teaser: "The king is mocked, the blind see, the disciples are lost.", bgClass: "tile-luke" },
-  { id: "kingdom-of-god", title: "The Kingdom of God", teaser: "Mark's Jesus is obsessed with it. But what exactly is it?", bgClass: "tile-luke" },
+  { id: "kingdom-of-god", title: "The Kingdom of God", teaser: "Mark's Jesus is obsessed with it. But what exactly is it?", bgClass: "tile-luke", screen: "kingdom-of-god" },
   { id: "gehenna", title: "What is Gehenna?", teaser: "Hell, a rubbish dump, or something else entirely?", bgClass: "tile-mark" },
   { id: "resurrection-mark", title: "Did Jesus Rise from the Dead in Mark?", teaser: "The original ending has no resurrection appearances at all.", bgClass: "tile-john" },
   { id: "naked-boy",        title: "Who Was the Naked Boy?",             teaser: "A mysterious figure who vanishes into the night in Gethsemane.", bgClass: "tile-mark" },
@@ -1941,6 +1941,242 @@ function DidJesusPredictScreen({ state, onBack }) {
   );
 }
 
+function KingdomOfGodScreen({ state, onBack }) {
+  return (
+    <div className={`screen ${state}`}>
+      <div className="inner-screen">
+        <button className="back-btn" onClick={onBack}>← Back</button>
+        <div className="inner-header">
+          <div className="inner-header-eyebrow">The Gospel of Mark</div>
+          <div className="inner-header-title">The Kingdom of God</div>
+          <div className="inner-header-rule" />
+        </div>
+        <div style={{
+          flex: 1, overflowY: "auto", padding: "0 24px 40px",
+          fontFamily: "'EB Garamond', serif", color: "var(--parchment)",
+          lineHeight: 1.75, fontSize: 15,
+        }}>
+
+          <p style={{ marginBottom: 14 }}>
+            <em>ἡ βασιλεία τοῦ θεοῦ</em> is the Greek form from which "kingdom of God" is derived.
+            Throughout the gospels, Jesus obsessed with this mysterious kingdom. In fact, his first
+            words in Mark speak of it:
+          </p>
+
+          <div style={{
+            borderLeft: "2px solid var(--gold)", background: "rgba(201,168,76,0.04)",
+            padding: "12px 16px", borderRadius: "0 3px 3px 0", marginBottom: 14,
+          }}>
+            <div style={{ fontFamily: "'Cinzel', serif", fontSize: 9, color: "var(--gold-dim)", letterSpacing: "0.3em", marginBottom: 6 }}>MARK 1:14-15</div>
+            <p style={{ margin: 0, fontStyle: "italic", fontSize: 15, color: "var(--gold-light)" }}>
+              Now after John was taken into custody, Jesus came into Galilee, preaching the gospel of
+              God, and saying, "The time is fulfilled, and the kingdom of God has come near; repent and
+              believe in the gospel."
+            </p>
+          </div>
+
+          <p style={{ marginBottom: 14 }}>
+            So, what exactly is it? The Church taught for centuries a sort of "here but not yet" view of
+            the kingdom, believing Jesus inaugurated its coming but the full power was yet to arrive in a
+            physical form at the end of days. Everything Jesus does: healings, exorcisms, and his
+            servitude are meant to give people a glimpse at life in the kingdom. Sickness, death, and evil
+            forces will be squashed underfoot, so of course everywhere Jesus goes, those things wither
+            away. And one day, the reign of God will cover the whole world, such as is depicted in the
+            Parable of the Mustard Seed:
+          </p>
+
+          <div style={{
+            borderLeft: "2px solid var(--gold)", background: "rgba(201,168,76,0.04)",
+            padding: "12px 16px", borderRadius: "0 3px 3px 0", marginBottom: 14,
+          }}>
+            <div style={{ fontFamily: "'Cinzel', serif", fontSize: 9, color: "var(--gold-dim)", letterSpacing: "0.3em", marginBottom: 6 }}>MARK 4:30-32</div>
+            <p style={{ margin: 0, fontStyle: "italic", fontSize: 15, color: "var(--gold-light)" }}>
+              And He was saying, "How shall we picture the kingdom of God, or by what parable shall we
+              present it? It is like a mustard seed, which, when sown upon the soil, though it is the
+              smallest of all the seeds that are upon the soil, yet when it is sown, it grows up and
+              becomes larger than all the garden plants, and forms large branches, with the result that
+              the birds of the sky can nest under its shade."
+            </p>
+          </div>
+
+          <p style={{ marginBottom: 14 }}>
+            It was not until the revolutionary book <em>The Quest for the Historical Jesus</em> (1906) by
+            Albert Schweitzer, a theologian, medical missionary, and Nobel Peace Prize winner, that
+            historians began seeing more. Rather than being a wise, sort-of liberal teacher and prophet,
+            Jesus was firmly rooted in the Jewish apocalyptic worldview and expected the kingdom of God to
+            come physically within his lifetime, or at least shortly thereafter. More about Schweitzer and
+            the quests for this historical Jesus throughout the 20th century will be discussed elsewhere.
+            For now, just know that Schweitzer introduced a new view to biblical scholarship: Jesus was an
+            apocalyptic prophet hoping for the end to come soon and he was crucified for claiming
+            kingship. This became the dominant view in scholarship throughout the 20th century and to
+            this day. Variations on this view have developed but the core has remained mostly the same.
+          </p>
+
+          {/* Section header */}
+          <div style={{
+            fontFamily: "'Cinzel', serif", fontSize: 10, letterSpacing: "0.35em",
+            color: "var(--gold-dim)", textTransform: "uppercase", marginBottom: 12, marginTop: 24,
+            display: "flex", alignItems: "center", gap: 10,
+          }}>
+            <div style={{ flex: 1, height: 1, background: "rgba(201,168,76,0.2)" }} />
+            What Is the Kingdom?
+            <div style={{ flex: 1, height: 1, background: "rgba(201,168,76,0.2)" }} />
+          </div>
+
+          <p style={{ marginBottom: 14 }}>
+            In the Hebrew Bible (the Old Testament for Christians), there were many different views of
+            God. There was not really a concept of a fully wicked being like the devil. There were wicked
+            <em> elohim</em> in God's divine council (spiritual beings or gods that the Most High God
+            YHWH created, and ruled over the nations), but not a single epitome of evil. In fact, numerous
+            places like Isaiah 45:7 or Exodus 4:11 portray God as the sovereign over both good and evil,
+            happiness and suffering:
+          </p>
+
+          <div style={{
+            borderLeft: "2px solid var(--gold)", background: "rgba(201,168,76,0.04)",
+            padding: "12px 16px", borderRadius: "0 3px 3px 0", marginBottom: 14,
+          }}>
+            <div style={{ fontFamily: "'Cinzel', serif", fontSize: 9, color: "var(--gold-dim)", letterSpacing: "0.3em", marginBottom: 6 }}>ISAIAH 45:7</div>
+            <p style={{ margin: 0, fontStyle: "italic", fontSize: 15, color: "var(--gold-light)" }}>
+              I am the Lord, and there is no one else,<br />
+              The One forming light and creating darkness,<br />
+              Causing well-being and creating disaster;<br />
+              I am the Lord who does all these things.
+            </p>
+          </div>
+
+          <p style={{ marginBottom: 14 }}>
+            When the centuries passed and the promises of God were not being fulfilled, the Israelites
+            became disheartened. They re-read ancient prophecies of divine justice and developed a new
+            theology of <em>apocalypticism</em>. This became their hope in times of oppression and
+            dismay.
+          </p>
+
+          <p style={{ marginBottom: 14 }}>
+            The new theology was that there is a war going on, one we cannot see. One side is God's side
+            and the other is evil, headed by Satan or the devil. And that is why the promises of safety,
+            greatness, and Israelite dominance have not come to pass. One day, the authority of the devil
+            will be destroyed and God will annihilate the forces of evil in the world. The ancient
+            kingdom of grandeur, the line of David, will be restored and the Messiah will rule from
+            Jerusalem. A mysterious divine being known as the Son of Man, first referenced in the book of
+            Daniel who developed into a major apocalyptic figure in Second Temple Judaism, will judge the
+            living and the dead. The wicked will be destroyed (Isaiah 66) and the righteous will inherit
+            the new kingdom of God established on Earth. They will be given new bodies that can never
+            deteriorate, and will shine as the stars forever (Daniel 12:3).
+          </p>
+
+          {/* Section header */}
+          <div style={{
+            fontFamily: "'Cinzel', serif", fontSize: 10, letterSpacing: "0.35em",
+            color: "var(--gold-dim)", textTransform: "uppercase", marginBottom: 12, marginTop: 24,
+            display: "flex", alignItems: "center", gap: 10,
+          }}>
+            <div style={{ flex: 1, height: 1, background: "rgba(201,168,76,0.2)" }} />
+            How Jesus Viewed the Kingdom
+            <div style={{ flex: 1, height: 1, background: "rgba(201,168,76,0.2)" }} />
+          </div>
+
+          <p style={{ marginBottom: 14 }}>
+            In the kingdom, the weak will be made strong. The poor will be rich. The hungry will be fed.
+            The least will be greatest.
+          </p>
+
+          <p style={{ marginBottom: 14 }}>
+            Jesus saw everything through the lens of reversed fortunes. For example, when the disciples
+            James and John ask Jesus to sit beside him in his glory (Mark 10:35), Jesus retorts that they
+            do not know what they are asking, and that to do so would mean they would have to drink the
+            cup he is about to drink, which is itself an allusion to the crucifixion. This seems to be a
+            quiet reference to Mark 9:35:
+          </p>
+
+          <div style={{
+            borderLeft: "2px solid var(--gold)", background: "rgba(201,168,76,0.04)",
+            padding: "12px 16px", borderRadius: "0 3px 3px 0", marginBottom: 14,
+          }}>
+            <p style={{ margin: 0, fontStyle: "italic", fontSize: 15, color: "var(--gold-light)" }}>
+              And sitting down, He called the twelve and said to them, "If anyone wants to be first, he
+              shall be last of all and servant of all."
+            </p>
+          </div>
+
+          <p style={{ marginBottom: 14 }}>
+            So, what is Mark saying here? Jesus is securing his position in the kingdom of God by dying on
+            the cross, since he believes the least on Earth will be greatest in the kingdom. Who is
+            greatest in the kingdom? The king. In this case, the Messiah who sits on David's throne.
+            Therefore, a conclusion emerges.
+          </p>
+
+          <p style={{ marginBottom: 14 }}>
+            By becoming truly last on Earth, Jesus would be <em>first</em> in the kingdom of God. His
+            worldview of reversed fortunes carried him even through his torture and violent end.
+          </p>
+
+          <p style={{ marginBottom: 14 }}>
+            In fact, this is exactly one of the reasons the early Church including Paul believed the end
+            of days and the coming of the Kingdom was imminent. Jesus was the first fruits of the world to
+            come. A window into the Kingdom of God. Not only could disease, disaster, and demonic forces
+            coexist around him, which was made clear by the countless exorcisms and miracles, but even
+            death itself could not overcome him. Likewise, none of these things would permeate the
+            Kingdom either. All would be made right. The heir of David will sit upon his throne and the
+            kingdoms of the world will worship the God of Israel.
+          </p>
+
+          <p style={{ marginBottom: 14 }}>
+            For the consensus of critical scholars, Mark's Jesus is crystal clear. The next world is
+            imminent and will grind history to a halt. His cry of watchfulness and vigilance is felt
+            throughout the gospel.
+          </p>
+
+          <div style={{
+            borderLeft: "2px solid var(--gold)", background: "rgba(201,168,76,0.04)",
+            padding: "12px 16px", borderRadius: "0 3px 3px 0", marginBottom: 0,
+          }}>
+            <div style={{ fontFamily: "'Cinzel', serif", fontSize: 9, color: "var(--gold-dim)", letterSpacing: "0.3em", marginBottom: 6 }}>MARK 13:35-37</div>
+            <p style={{ margin: 0, fontStyle: "italic", fontSize: 15, color: "var(--gold-light)" }}>
+              "Therefore stay awake—for you do not know when the master of the house will come, in the
+              evening, or at midnight, or when the rooster crows, or in the morning— lest he come suddenly
+              and find you asleep. And what I say to you I say to all: Stay awake."
+            </p>
+          </div>
+
+          {/* Further Reading */}
+          <div style={{
+            background: "rgba(201,168,76,0.06)", border: "1px solid rgba(201,168,76,0.18)",
+            borderRadius: 3, padding: "16px 18px", marginTop: 28,
+          }}>
+            <div style={{
+              fontFamily: "'Cinzel', serif", fontSize: 9, letterSpacing: "0.35em",
+              color: "var(--gold)", textTransform: "uppercase", marginBottom: 12,
+            }}>Scholarly Works to Explore</div>
+            {[
+              { title: "The Quest for the Historical Jesus", author: "Albert Schweitzer", year: "1906" },
+              { title: "Jesus and Judaism", author: "E. P. Sanders", year: "1985" },
+              { title: "Jesus: Apocalyptic Prophet of the New Millennium", author: "Bart D. Ehrman", year: "1999" },
+              { title: "Jesus of Nazareth: Millenarian Prophet", author: "Dale C. Allison Jr.", year: "1998" },
+            ].map((book, i, arr) => (
+              <div key={i} style={{
+                display: "flex", justifyContent: "space-between", alignItems: "baseline",
+                padding: "8px 0",
+                borderBottom: i < arr.length - 1 ? "1px solid rgba(201,168,76,0.1)" : "none",
+              }}>
+                <div>
+                  <span style={{ fontStyle: "italic", fontSize: 14 }}>{book.title}</span>
+                  <span style={{ color: "var(--gold-dim)", fontSize: 13 }}> · {book.author}</span>
+                </div>
+                <span style={{
+                  fontFamily: "'Cinzel', serif", fontSize: 10,
+                  color: "var(--gold-dim)", opacity: 0.7, flexShrink: 0, marginLeft: 12,
+                }}>{book.year}</span>
+              </div>
+            ))}
+          </div>
+
+        </div>
+      </div>
+    </div>
+  );
+}
+
 function GospelTopicsScreen({ state, onBack, eyebrow, title, tiles, gospelId, onCompare, onNavigate }) {
   const rows = [];
   for (let i = 0; i < tiles.length; i += 3) rows.push(tiles.slice(i, i + 3));
@@ -2262,7 +2498,7 @@ function HomeScreen({ state, onNavigate }) {
   );
 }
 
-const SCREENS = ["home","gospels","canonical","mark","matthew","john","gospel-compare","q-source","jesus","jesus-quests","jesus-portraits","jesus-compare","paul","christophany","who-wrote-mark","when-was-mark","messianic-secret","christology-mark","temple-prediction"];
+const SCREENS = ["home","gospels","canonical","mark","matthew","john","gospel-compare","q-source","jesus","jesus-quests","jesus-portraits","jesus-compare","paul","christophany","who-wrote-mark","when-was-mark","messianic-secret","christology-mark","temple-prediction","kingdom-of-god"];
 
 export default function App() {
   const [history, setHistory] = useState(["home"]);
@@ -2302,6 +2538,7 @@ export default function App() {
         <MessianicSecretScreen   state={stateFor("messianic-secret")}  onBack={goBack} />
         <ChristologyOfMarkScreen  state={stateFor("christology-mark")}   onBack={goBack} />
         <DidJesusPredictScreen   state={stateFor("temple-prediction")}   onBack={goBack} />
+        <KingdomOfGodScreen      state={stateFor("kingdom-of-god")}      onBack={goBack} />
       </div>
     </>
   );
