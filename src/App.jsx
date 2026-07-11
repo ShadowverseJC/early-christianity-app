@@ -2115,7 +2115,7 @@ function KingdomOfGodScreen({ state, onBack }) {
             In fact, this is exactly one of the reasons the early Church including Paul believed the end
             of days and the coming of the Kingdom was imminent. Jesus was the first fruits of the world to
             come. A window into the Kingdom of God. Not only could disease, disaster, and demonic forces
-            coexist around him, which was made clear by the countless exorcisms and miracles, but even
+            not coexist around him, which was made clear by the countless exorcisms and miracles, but even
             death itself could not overcome him. Likewise, none of these things would permeate the
             Kingdom either. All would be made right. The heir of David will sit upon his throne and the
             kingdoms of the world will worship the God of Israel.
