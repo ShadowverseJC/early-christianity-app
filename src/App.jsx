@@ -745,7 +745,7 @@ const MARK_TILES = [
   { id: "messianic-secret", title: "The Messianic Secret", teaser: "Why does Jesus keep telling people to stay quiet?", bgClass: "tile-luke", screen: "messianic-secret" },
   { id: "christology-mark", title: "The Christology of Mark", teaser: "A powerful but strangely human portrait of Jesus.", bgClass: "tile-john", screen: "christology-mark" },
   { id: "temple-prediction", title: "Did Jesus Predict the Temple's Destruction?", teaser: "Prophecy after the fact — or genuine foresight?", bgClass: "tile-mark", screen: "temple-prediction" },
-  { id: "passion-mark", title: "The Passion Narrative", teaser: "The oldest account of Jesus's arrest, trial, and death.", bgClass: "tile-matthew" },
+  { id: "passion-mark", title: "The Passion Narrative", teaser: "The oldest account of Jesus's arrest, trial, and death.", bgClass: "tile-matthew", screen: "passion-mark" },
   { id: "irony-mark", title: "Thematic Irony in Mark", teaser: "The king is mocked, the blind see, the disciples are lost.", bgClass: "tile-luke" },
   { id: "kingdom-of-god", title: "The Kingdom of God", teaser: "Mark's Jesus is obsessed with it. But what exactly is it?", bgClass: "tile-luke", screen: "kingdom-of-god" },
   { id: "gehenna", title: "What is Gehenna?", teaser: "Hell, a rubbish dump, or something else entirely?", bgClass: "tile-mark" },
@@ -2177,6 +2177,281 @@ function KingdomOfGodScreen({ state, onBack }) {
   );
 }
 
+function PassionNarrativeScreen({ state, onBack }) {
+  const SectionHeader = ({ children }) => (
+    <div style={{
+      fontFamily: "'Cinzel', serif", fontSize: 10, letterSpacing: "0.35em",
+      color: "var(--gold-dim)", textTransform: "uppercase", marginBottom: 12, marginTop: 24,
+      display: "flex", alignItems: "center", gap: 10,
+    }}>
+      <div style={{ flex: 1, height: 1, background: "rgba(201,168,76,0.2)" }} />
+      {children}
+      <div style={{ flex: 1, height: 1, background: "rgba(201,168,76,0.2)" }} />
+    </div>
+  );
+
+  const Verse = ({ label, children }) => (
+    <div style={{
+      borderLeft: "2px solid var(--gold)", background: "rgba(201,168,76,0.04)",
+      padding: "12px 16px", borderRadius: "0 3px 3px 0", marginBottom: 14,
+    }}>
+      {label && <div style={{ fontFamily: "'Cinzel', serif", fontSize: 9, color: "var(--gold-dim)", letterSpacing: "0.3em", marginBottom: 6 }}>{label}</div>}
+      <p style={{ margin: 0, fontStyle: "italic", fontSize: 15, color: "var(--gold-light)" }}>{children}</p>
+    </div>
+  );
+
+  return (
+    <div className={`screen ${state}`}>
+      <div className="inner-screen">
+        <button className="back-btn" onClick={onBack}>← Back</button>
+        <div className="inner-header">
+          <div className="inner-header-eyebrow">The Gospel of Mark</div>
+          <div className="inner-header-title">The Passion Narrative</div>
+          <div className="inner-header-rule" />
+        </div>
+        <div style={{
+          flex: 1, overflowY: "auto", padding: "0 24px 40px",
+          fontFamily: "'EB Garamond', serif", color: "var(--parchment)",
+          lineHeight: 1.75, fontSize: 15,
+        }}>
+
+          <SectionHeader>Behind the Narrative</SectionHeader>
+
+          <p style={{ marginBottom: 14 }}>
+            The common Christian idea is that the passion narrative in all gospels is mostly or completely
+            the same. The truth is quite the opposite, especially when it comes to themes. As scholar Bart
+            Ehrman recommends, one must read every gospel for itself and not try to supply it with another
+            other gospel's events or themes.
+          </p>
+
+          <p style={{ marginBottom: 14, fontStyle: "italic", color: "var(--gold-light)", opacity: 0.9, fontSize: 16 }}>
+            Read Mark for Mark. Don't read Mark plus a little bit of Matthew.
+          </p>
+
+          <p style={{ marginBottom: 14 }}>
+            Unlike the other gospels, the passion narrative is Mark's biggest focus, and everything in the
+            gospel points to it in some fashion. In fact, Jesus' final week takes up over forty percent of
+            the entire gospel! Because of this, scholar Martin Kähler famously described the Gospel of
+            Mark as a "passion narrative with an extended introduction" in his book <em>The So-called
+            Historical Jesus and the Historic, Biblical Christ</em> (1892).
+          </p>
+
+          <p style={{ marginBottom: 0 }}>
+            Kähler, along with scholar Rudolf Bultmann, argued that the Markan passion narrative is the
+            oldest continuous narrative about Jesus. Fast-forward to today, and this is generally the
+            consensus among scholars. In fact, it is believed this story may trace to within a few years
+            after the life of Jesus as an independent oral tradition. Furthermore, this strand of tradition
+            may have also reached written form in a proto-gospel known as Q, the mysterious, unfound
+            source behind all the Synoptic Gospels. We will discuss Q elsewhere, but it is a good thing to
+            be aware of.
+          </p>
+
+          <SectionHeader>Mark's Suffering Servant</SectionHeader>
+
+          <p style={{ marginBottom: 14 }}>
+            On that note, Mark writes Jesus as much more human than other gospels. In John 17, Jesus
+            triumphantly enters the Garden of Gethsemane. He prays to be glorified, prays for his
+            disciples, and prays for all future believers.
+          </p>
+
+          <p style={{ marginBottom: 14 }}>
+            This is not so in Mark, where Jesus begs the Father to take the cup of the cross from him:
+          </p>
+
+          <Verse label="MARK 14:35-36">
+            And He went a little beyond them, and fell to the ground and began praying that if it were
+            possible, the hour might pass Him by. And He was saying, "Abba! Father! All things are
+            possible for You; remove this cup from Me; yet not what I will, but what You will."
+          </Verse>
+
+          <p style={{ marginBottom: 14 }}>
+            He commands the disciples to pray for him, but each time he checks on them, they are sleeping:
+          </p>
+
+          <Verse label="MARK 14:37">
+            And He came and found them sleeping, and said to Peter, "Simon, are you asleep? Could you not
+            keep watch for one hour?"
+          </Verse>
+
+          <p style={{ marginBottom: 0 }}>
+            Interestingly, Mark does not describe Jesus sweating blood. Luke adds that well-known detail
+            to his narrative. Regardless, Jesus is completely alone in body and mind, and he prays to be
+            saved from the suffering and death that is waiting for him. But this is part of Mark's theology
+            on suffering. Just like the prophets, the good will take upon them the penalty of the wicked
+            and suffering is the path to Heaven.
+          </p>
+
+          <p style={{ marginBottom: 14, marginTop: 14 }}>
+            A nice little parallel and another case of the genius of Mark is that when Jesus is crucified,
+            two criminals hang on crosses beside Jesus. <em>Irony in Mark's Gospel</em> (1991) by Jerry
+            Camery-Hoggatt cleverly recognizes that the disciples' request to sit beside Jesus is filled by
+            the two criminals crucified with him. See Mark 10:37:
+          </p>
+
+          <Verse>
+            They said to Him, "Grant that we may sit, one on Your right and one on Your left, in Your
+            glory."
+          </Verse>
+
+          <p style={{ marginBottom: 14 }}>
+            James and John the sons of Zebedee were unknowingly asking for martyrdom. Even more, Mark
+            therefore posits Jesus' "glory" as the cross itself — and when Jesus is crucified, two
+            criminals are there with him, on his right and left, in his glory. This further reinforces
+            Markan Christology: Jesus is king not in spite of, but <em>because</em> of the crucifixion.
+            Which, as explained in our section on the Kingdom of God in Mark's gospel, fits the theology of
+            Jesus quite well. In the end, it is because of his sacrifice that leads to his glorification as
+            Messiah.
+          </p>
+
+          <p style={{ marginBottom: 0, fontStyle: "italic", textAlign: "center", color: "var(--gold-light)", opacity: 0.9, fontSize: 16 }}>
+            Reversed fortunes. The least becoming greatest.
+          </p>
+
+          <SectionHeader>Barabbas &amp; Mark's Audience</SectionHeader>
+
+          <p style={{ marginBottom: 14 }}>
+            Shockingly, or not so shockingly if you are a Gentile audience, Mark depicts the Romans as
+            manipulated by the Jews to crucify Jesus. He is brought before Pontius Pilate, the prefect of
+            Judea at the time.
+          </p>
+
+          <p style={{ marginBottom: 14 }}>
+            Mark documents that Pilate, in a gesture of goodwill, offers up a single prisoner of a crowd's
+            choice every Passover now known as the Paschal Pardon. In the trial of Jesus, Pilate offers up
+            Barabbas, a political insurgent and murderer in one of many revolts at the time. This annual
+            pardon could possibly have been real, as Roman governors did sometimes do things like pardons
+            to appease the people, especially during festivals and feasts. Unfortunately, as for Pilate,
+            there is no evidence to support he took part in this as well and any attempt is mere
+            conjecture. There is no mention of this custom by Josephus, Philo of Alexandria, or other
+            Roman sources. Pilate is usually depicted as a ruler who suppressed unrest rather than being a
+            crowd-pleaser. This does not mean it absolutely didn't happen, but there is not any good
+            evidence at the moment. Bart Ehrman, for example, argues it is historically unlikely. On the
+            other hand, scholars John P. Meier and Raymond E. Brown argue it is possible he existed, but
+            are cautious in detailing the specifics.
+          </p>
+
+          <p style={{ marginBottom: 0 }}>
+            So, if this did not happen, why did Mark invent it? If you look closely, Barabbas' name is
+            quite literally made of the Aramaic words <em>bar</em> (son of) and <em>abba</em> (father). Son
+            of the Father!
+          </p>
+
+          <p style={{ marginBottom: 14, marginTop: 14 }}>
+            What is Mark saying here? It is quite obvious. Which son of the Father will Israel choose?
+            Jesus or Barabbas?
+          </p>
+
+          <p style={{ marginBottom: 14, fontStyle: "italic", color: "var(--gold-light)", opacity: 0.9, fontSize: 16 }}>
+            What a brilliant twist and message Mark has woven into the narrative!
+          </p>
+
+          <p style={{ marginBottom: 16 }}>
+            In <em>A Marginal Jew</em>, John P. Meier writes that the crowd choosing Barabbas, a political
+            insurgent against the Romans (which the political Messiah was expected to do) over the
+            spiritual Messiah, Jesus, represents the ultimate rejection. The crucifixion becomes a
+            substitutionary act, not just theologically but also literally. Jesus is crucified in place of
+            another, as in the Roman Empire, insurrection and rebellion was a capital punishment worthy of
+            crucifixion. Many scholars see this as an illustration of the Messiah people expected versus
+            the Messiah that Mark presents.
+          </p>
+
+          {/* Jesus vs. Barabbas table */}
+          <div style={{
+            background: "rgba(201,168,76,0.05)", border: "1px solid rgba(201,168,76,0.2)",
+            borderRadius: 3, padding: "14px 16px", marginBottom: 16,
+          }}>
+            <div style={{ display: "flex", marginBottom: 10 }}>
+              <div style={{ flex: 1, fontFamily: "'Cinzel', serif", fontSize: 10, color: "var(--gold)", letterSpacing: "0.1em" }}>Jesus</div>
+              <div style={{ flex: 1, fontFamily: "'Cinzel', serif", fontSize: 10, color: "var(--gold)", letterSpacing: "0.1em" }}>Barabbas</div>
+            </div>
+            {[
+              ["Innocent", "Guilty"],
+              ["Brings peace", "Associated with violent revolt"],
+              ["Dies", "Goes free"],
+              ["Called King", "Actual insurrectionist"],
+            ].map(([a, b], i, arr) => (
+              <div key={i} style={{
+                display: "flex", padding: "8px 0",
+                borderTop: "1px solid rgba(201,168,76,0.12)",
+              }}>
+                <div style={{ flex: 1, fontSize: 14 }}>{a}</div>
+                <div style={{ flex: 1, fontSize: 14 }}>{b}</div>
+              </div>
+            ))}
+          </div>
+
+          <p style={{ marginBottom: 14 }}>
+            Pilate's shock at the crowd's demands for Barabbas to be freed in Mark 15 is intentional. If
+            Mark was written around AD 70 per the scholarly consensus, this makes perfect sense. Jewish
+            Christians are beginning to dwindle and new converts are mostly Gentiles. As a result, Pilate
+            is painted in a good light, forced by the Jewish crowd and Sanhedrin to kill Jesus. Even more
+            obvious is the fact one of the Romans who crucified Jesus admits his divinity! Romans
+            considered Caesar as divine, so a Roman soldier instead proclaiming Jesus as the true Son of
+            God is extremely fascinating and ironic, but makes perfect sense if Mark was written at the
+            moment the Church's base was shifting.
+          </p>
+
+          <Verse label="MARK 15:39">
+            And when the centurion, who was standing right in front of Him, saw that He died in this way,
+            he said, "Truly this Man was the Son of God!"
+          </Verse>
+
+          <p style={{ marginBottom: 0 }}>
+            This is truly fascinating since Mark notes that the centurion only says this <em>because</em>
+            of the manner of Jesus' death. To Mark, Jesus is Messiah because of the crucifixion, not in
+            spite of it. Unlike the other gospels, his death is quiet, like a lamb let to slaughter.
+            Scholars do mostly agree Mark appears to be modeling the crucifixion after the Suffering
+            Servant of Isaiah 53. While John, for example, has Jesus cry out that "it is finished," Jesus
+            in Mark laments that God has abandoned him, cries out one last time, and gives up his spirit.
+          </p>
+
+          <SectionHeader>Conclusion</SectionHeader>
+
+          <p style={{ marginBottom: 20 }}>
+            The Passion Narrative in Mark's Gospel is short and to the point. The marks of theological
+            developments in later gospels are not present, and it depicts the titular character of Jesus
+            as a sacrificial lamb crucified in place of a criminal. While the Gospel of John has Jesus
+            carry his own cross triumphantly, Mark has Jesus fall over and over, needing an everyman from
+            the crowd, Simon of Cyrene, to carry it for him as he trails behind. This imagery is meant to
+            evoke the somber tone of Jesus being led to his doom. No dialogue, no last-minute prophecies
+            like in other gospels. For scholars, this is potentially the most accurate to the real
+            crucifixion, but ultimately, we may never know.
+          </p>
+
+          {/* Further Reading */}
+          <div style={{
+            background: "rgba(201,168,76,0.06)", border: "1px solid rgba(201,168,76,0.18)",
+            borderRadius: 3, padding: "16px 18px",
+          }}>
+            <div style={{
+              fontFamily: "'Cinzel', serif", fontSize: 9, letterSpacing: "0.35em",
+              color: "var(--gold)", textTransform: "uppercase", marginBottom: 12,
+            }}>Scholarly Works to Explore</div>
+            {[
+              { title: "The Death of the Messiah", author: "Raymond E. Brown" },
+              { title: "Mark 8-16", author: "Joel Marcus" },
+              { title: "Jesus and the Victory of God", author: "N.T. Wright" },
+              { title: "A Marginal Jew", author: "John P. Meier" },
+            ].map((book, i, arr) => (
+              <div key={i} style={{
+                display: "flex", justifyContent: "space-between", alignItems: "baseline",
+                padding: "8px 0",
+                borderBottom: i < arr.length - 1 ? "1px solid rgba(201,168,76,0.1)" : "none",
+              }}>
+                <div>
+                  <span style={{ fontStyle: "italic", fontSize: 14 }}>{book.title}</span>
+                  <span style={{ color: "var(--gold-dim)", fontSize: 13 }}> · {book.author}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+
+        </div>
+      </div>
+    </div>
+  );
+}
+
 function GospelTopicsScreen({ state, onBack, eyebrow, title, tiles, gospelId, onCompare, onNavigate }) {
   const rows = [];
   for (let i = 0; i < tiles.length; i += 3) rows.push(tiles.slice(i, i + 3));
@@ -2498,7 +2773,7 @@ function HomeScreen({ state, onNavigate }) {
   );
 }
 
-const SCREENS = ["home","gospels","canonical","mark","matthew","john","gospel-compare","q-source","jesus","jesus-quests","jesus-portraits","jesus-compare","paul","christophany","who-wrote-mark","when-was-mark","messianic-secret","christology-mark","temple-prediction","kingdom-of-god"];
+const SCREENS = ["home","gospels","canonical","mark","matthew","john","gospel-compare","q-source","jesus","jesus-quests","jesus-portraits","jesus-compare","paul","christophany","who-wrote-mark","when-was-mark","messianic-secret","christology-mark","temple-prediction","kingdom-of-god","passion-mark"];
 
 export default function App() {
   const [history, setHistory] = useState(["home"]);
@@ -2539,6 +2814,7 @@ export default function App() {
         <ChristologyOfMarkScreen  state={stateFor("christology-mark")}   onBack={goBack} />
         <DidJesusPredictScreen   state={stateFor("temple-prediction")}   onBack={goBack} />
         <KingdomOfGodScreen      state={stateFor("kingdom-of-god")}      onBack={goBack} />
+        <PassionNarrativeScreen  state={stateFor("passion-mark")}        onBack={goBack} />
       </div>
     </>
   );
